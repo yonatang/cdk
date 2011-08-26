@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>me.yonatan.cdk</groupId>
+	<artifactId>cdk-example</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>example</name>
+	<parent>
+		<groupId>me.yonatan.cdk</groupId>
+		<artifactId>cdk-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+		<dependency>
+			<groupId>me.yonatan.cdk</groupId>
+			<artifactId>cdk-tags</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>cdk-example</finalName>
+		<plugins>
+			<!-- Plugin for maven jboss deployment. Optional. -->
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<version>7.0.0.Final</version>
+				<configuration>
+					<hostname>localhost</hostname>
+					<port>9999</port>
+					<filename>${project.build.finalName}.war</filename>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>

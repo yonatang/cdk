@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:y="http://yonatan.me/cdk">
+
+<h:head>
+	<title>CDK Example</title>
+	<style type="text/css">
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.header {
+	display: block;
+	text-align: center;
+	font-size: 25px;
+}
+
+.bottom {
+	display: block;
+	margin-top: 15px;
+	border-top: solid thin black;
+	margin-top: 15px;
+}
+</style>
+</h:head>
+
+<h:body>
+	<h:outputText value="CDK Example" styleClass="header"/>
+	<h:outputText value="Hello world shoud be here:" />
+	<y:helloWorld />
+
+	<h:outputLink value="http://blog.yonatan.me" styleClass="bottom">
+		<h:outputText value="Yonatan's blog (C) 2011" />
+	</h:outputLink>
+</h:body>
+
+</html>
